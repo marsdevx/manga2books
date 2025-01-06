@@ -1,2 +1,5 @@
 temp
 improvements.md
+__pycache__
+.DS_Store
+.vscode
