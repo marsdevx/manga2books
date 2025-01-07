@@ -19,7 +19,7 @@ from ebooklib import epub
 from natsort import natsorted
 
 def make_ch(chapter_title, image_paths, chapter_file_name):
-  
+
   chapter = epub.EpubHtml(
     title=chapter_title,
     file_name=chapter_file_name,
@@ -103,5 +103,3 @@ def convert_imgs(path):
   book.toc = [epub.Link(chap.file_name, chap.title, f'chap_{i}') for i, chap in enumerate(chapters_list, start=1)]
 
   epub.write_epub(output_dir, book, {})
-
-convert_imgs("~/Desktop/Projects/manga2books/Childhood Friend Of The Zenith")

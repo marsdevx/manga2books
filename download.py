@@ -32,7 +32,7 @@ def download_extract(url):
   temp_path = os.path.expanduser("~/Desktop/Projects/manga2books/temp")
   os.makedirs(temp_path, exist_ok=True)
 
-  command = ["./manga_parser", url, "-o", temp_path, "-t", "{{.Number}}"]
+  command = ["./manga_parser", url, "-o", temp_path, "-t", "{{.Number}}", "1-10"]
   manga_name = subprocess.run(command, check=True, text=True, capture_output=True).stdout.strip()
 
   manga_path = os.path.expanduser(f"~/Desktop/Projects/manga2books/{manga_name}")
@@ -45,6 +45,8 @@ def download_extract(url):
       with zipfile.ZipFile(cbz_path, 'r') as zip_ref:
         zip_ref.extractall(target_folder)
       os.remove(cbz_path)
+
+  return manga_name
 
 def resize_cut(manga_path):
 
@@ -74,6 +76,3 @@ def resize_cut(manga_path):
           cropped_img.save(save_path)
 
         os.remove(file_path)
-
-download_extract("https://readmangabat.com/read-eo409007")
-resize_cut("~/Desktop/Projects/manga2books/Childhood Friend Of The Zenith")
