@@ -29,13 +29,7 @@ def main():
   url = sys.argv[1]
   ch_range = sys.argv[2] if len(sys.argv) > 2 else None
 
-  result = subprocess.run(
-  ["./manga_parser", "-t", "{{.Number}}", url, "1"],
-  check=True,
-  text=True,
-  capture_output=True
-  ).stdout.strip()
-
+  result = subprocess.run(["./manga_parser", "-t", "{{.Number}}", url, "1"], check=True, text=True, capture_output=True).stdout.strip()
   lines = result.splitlines()
   chapters_count = int(lines[0]) if len(lines) > 0 else None
   name = lines[1] if len(lines) > 1 else None
