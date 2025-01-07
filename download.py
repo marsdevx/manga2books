@@ -60,6 +60,9 @@ def resize_cut(manga_path):
         img = Image.open(file_path)
         img_width, img_height = img.size
 
+        if img.mode == 'RGBA':
+          img = img.convert('RGB')
+
         split_count = math.ceil(img_height / max_height)
         split_height = math.ceil(img_height / split_count)
 
