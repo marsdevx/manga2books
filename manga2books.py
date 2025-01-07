@@ -59,7 +59,7 @@ def main():
   print("Converting imgs to epub")
   convert.convert_imgs(name, "cover.webp")
 
-  print(f"\nBook file: {name}, successfully created in Downloads")
+  print(f"\nBook file: \033[95m{name}\033[0m, successfully created in Downloads")
 
 if __name__ == "__main__":
 	main()
