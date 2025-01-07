@@ -27,19 +27,16 @@ import zipfile
 import subprocess
 from PIL import Image
 
-def download_extract(url, ch_range=None):
+def download_extract(name, url, ch_range=None):
 
-  temp_path = os.path.expanduser("temp")
-  os.makedirs(temp_path, exist_ok=True)
+  manga_path = os.path.expanduser(name)
+  os.makedirs(manga_path, exist_ok=True)
 
-  command = ["./manga_parser", url, "-o", temp_path, "-t", "{{.Number}}"]
+  command = ["./manga_parser", url, "-o", manga_path, "-t", "{{.Number}}"]
   if ch_range:
     command.append(ch_range)
 
-  manga_name = subprocess.run(command, check=True, text=True, capture_output=True).stdout.strip()
-
-  manga_path = os.path.expanduser(manga_name)
-  os.rename(temp_path, manga_path)
+  subprocess.run(command, check=True, text=True, capture_output=True).stdout.strip()
 
   for filename in os.listdir(manga_path):
     if filename.endswith(".cbz"):
@@ -48,8 +45,6 @@ def download_extract(url, ch_range=None):
       with zipfile.ZipFile(cbz_path, 'r') as zip_ref:
         zip_ref.extractall(target_folder)
       os.remove(cbz_path)
-
-  return manga_name
 
 def resize_cut(manga_path):
 
