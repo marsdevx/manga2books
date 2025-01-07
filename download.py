@@ -36,7 +36,7 @@ def download_extract(name, url, ch_range=None):
   if ch_range:
     command.append(ch_range)
 
-  subprocess.run(command, check=True, text=True, capture_output=True).stdout.strip()
+  subprocess.run(command, check=True, text=True, capture_output=True)
 
   for filename in os.listdir(manga_path):
     if filename.endswith(".cbz"):
