@@ -14,8 +14,6 @@
 #                                                                                         ⡝⡵⡕⡀⠑⠳⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⢉⡠⡲⡫⡪⡪⡣    #
 
 import sys
-import os
-import subprocess
 
 import convert
 import download
@@ -29,11 +27,8 @@ def main():
   url = sys.argv[1]
   ch_range = sys.argv[2] if len(sys.argv) > 2 else None
 
-  name = subprocess.run(["./manga_parser", "-t", "{{.Number}}", url, "1"], check=True, text=True, capture_output=True).stdout.strip()
-  os.remove("1.cbz")
-
   print("Downloading imgs")
-  download.download_extract(name, url, ch_range)
+  name = download.download_extract(url, ch_range)
 
   print("Downloading cover img for Manga")
   get_cover.get_cover(url)
