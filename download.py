@@ -27,12 +27,15 @@ import zipfile
 import subprocess
 from PIL import Image
 
-def download_extract(url):
+def download_extract(url, ch_range=None):
 
   temp_path = os.path.expanduser("temp")
   os.makedirs(temp_path, exist_ok=True)
 
-  command = ["./manga_parser", url, "-o", temp_path, "-t", "{{.Number}}", "1-10"]
+  command = ["./manga_parser", url, "-o", temp_path, "-t", "{{.Number}}", ch_range]
+  if ch_range:
+    command.append(ch_range)
+
   manga_name = subprocess.run(command, check=True, text=True, capture_output=True).stdout.strip()
 
   manga_path = os.path.expanduser(manga_name)
