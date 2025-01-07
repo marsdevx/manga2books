@@ -13,6 +13,7 @@
 
 import os
 import sys
+import shutil
 import random
 from PIL import Image
 from ebooklib import epub
@@ -103,3 +104,4 @@ def convert_imgs(path):
   book.toc = [epub.Link(chap.file_name, chap.title, f'chap_{i}') for i, chap in enumerate(chapters_list, start=1)]
 
   epub.write_epub(output_dir, book, {})
+  shutil.rmtree(path)
