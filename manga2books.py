@@ -14,6 +14,7 @@
 #                                                                                         ⡝⡵⡕⡀⠑⠳⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⢉⡠⡲⡫⡪⡪⡣    #
 
 import sys
+
 import convert
 import download
 import get_cover
@@ -25,11 +26,19 @@ def main():
 
   url = sys.argv[1]
 
+  print("Downloading imgs")
   name = download.download_extract(url)
+
+  print("Downloading cover img for Manga")
   get_cover.get_cover(url)
 
+  print("Resizing imgs")
   download.resize_cut(name)
+
+  print("Converting imgs to epub")
   convert.convert_imgs(name, "cover.webp")
+
+  print(f"\nBook file: {name}, successfully created in Downloads")
 
 if __name__ == "__main__":
 	main()
