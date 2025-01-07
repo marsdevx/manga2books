@@ -34,13 +34,7 @@ def make_ch(chapter_title, image_paths, chapter_file_name):
     ]
     items_to_add = []
     for idx, img_path in enumerate(image_paths, start=1):
-        if not os.path.isfile(img_path):
-            print(f"Warning: {img_path} is not a valid file. Skipping.")
-            continue
         ext = os.path.splitext(img_path)[1].lower()
-        if ext not in (".jpg", ".jpeg"):
-            print(f"Warning: Unsupported image format: {img_path}. Skipping.")
-            continue
         with open(img_path, "rb") as f:
             img_data = f.read()
         img_filename = f"images/{chapter_file_name}_img_{idx}{ext}"
