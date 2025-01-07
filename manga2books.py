@@ -28,8 +28,8 @@ def main():
   name = download.download_extract(url)
   get_cover.get_cover(url)
 
-  download.resize_cut(f"~/Desktop/Projects/manga2books/{name}")
-  convert.convert_imgs(f"~/Desktop/Projects/manga2books/{name}", "~/Desktop/Projects/manga2books/cover.webp")
+  download.resize_cut(name)
+  convert.convert_imgs(name, "cover.webp")
 
 if __name__ == "__main__":
 	main()

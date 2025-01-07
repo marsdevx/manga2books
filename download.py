@@ -29,13 +29,13 @@ from PIL import Image
 
 def download_extract(url):
 
-  temp_path = os.path.expanduser("~/Desktop/Projects/manga2books/temp")
+  temp_path = os.path.expanduser("temp")
   os.makedirs(temp_path, exist_ok=True)
 
   command = ["./manga_parser", url, "-o", temp_path, "-t", "{{.Number}}", "1-10"]
   manga_name = subprocess.run(command, check=True, text=True, capture_output=True).stdout.strip()
 
-  manga_path = os.path.expanduser(f"~/Desktop/Projects/manga2books/{manga_name}")
+  manga_path = os.path.expanduser(manga_name)
   os.rename(temp_path, manga_path)
 
   for filename in os.listdir(manga_path):
