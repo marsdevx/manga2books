@@ -23,7 +23,7 @@ import get_cover
 
 def main():
   if len(sys.argv) != 2 and len(sys.argv) != 3:
-    print("Usage: manga2books <manga_url_manga>")
+    print("Usage: manga2books <manga_url>")
     sys.exit(1)
 
   url = sys.argv[1]
@@ -37,10 +37,15 @@ def main():
   ).stdout.strip()
 
   lines = result.splitlines()
-  chapters_count = lines[0] if len(lines) > 0 else None
-  print(chapters_count)
+  chapters_count = int(lines[0]) if len(lines) > 0 else None
   name = lines[1] if len(lines) > 1 else None
   os.remove("1.cbz")
+
+  if len(sys.argv) == 2 and chapters_count > 300:
+    print("This manga has too many chapters. Please download it in smaller parts, e.g.:")
+    print("  manga2books <manga_url> 1-300")
+    print("  manga2books <manga_url> 301-___")
+    sys.exit(1)
 
   print("Downloading imgs")
   download.download_extract(name, url, ch_range)
