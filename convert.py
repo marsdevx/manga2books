@@ -69,9 +69,10 @@ def make_ch(chapter_title, image_paths, chapter_file_name):
   chapter.content = "\n".join(chapter_content)
   return chapter, items_to_add
 
-def convert_imgs(path):
+def convert_imgs(path, cover_path):
 
   path = os.path.expanduser(path)
+  cover_path = os.path.expanduser(cover_path)
   manga_name = os.path.basename(os.path.normpath(path))
   output_dir = os.path.expanduser(f"~/Downloads/{manga_name}.epub")
   chapters = natsorted(os.listdir(path))
@@ -79,12 +80,18 @@ def convert_imgs(path):
   if not os.path.isdir(path):
     print(f"Error: {path} is not a valid directory.")
     sys.exit(1)
+
+  if not os.path.isfile(cover_path):
+    print(f"Error: {cover_path} is not a valid file.")
+    sys.exit(1)
   
   book = epub.EpubBook()
   book.set_identifier(str(random.randint(100000, 999999)))
   book.set_title(manga_name)
   book.set_language("en")
   book.add_author("manga2books")
+  with open(cover_path, "rb") as cover_image_file:
+    book.set_cover(file_name=os.path.basename(cover_path), content=cover_image_file.read())
 
   chapters_list = []
   for i, chapter_name in enumerate(chapters, start=1):
