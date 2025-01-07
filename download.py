@@ -32,7 +32,7 @@ def download_extract(url, ch_range=None):
   temp_path = os.path.expanduser("temp")
   os.makedirs(temp_path, exist_ok=True)
 
-  command = ["./manga_parser", url, "-o", temp_path, "-t", "{{.Number}}", ch_range]
+  command = ["./manga_parser", url, "-o", temp_path, "-t", "{{.Number}}"]
   if ch_range:
     command.append(ch_range)
 
@@ -63,7 +63,7 @@ def resize_cut(manga_path):
         img = Image.open(file_path)
         img_width, img_height = img.size
 
-        if img.mode == 'RGBA':
+        if img.mode != 'RGB':
           img = img.convert('RGB')
 
         split_count = math.ceil(img_height / max_height)
