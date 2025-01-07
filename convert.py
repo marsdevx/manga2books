@@ -112,3 +112,4 @@ def convert_imgs(path, cover_path):
 
   epub.write_epub(output_dir, book, {})
   shutil.rmtree(path)
+  os.remove(cover_path)
