@@ -31,7 +31,7 @@ def main():
 
   result = subprocess.run(["./manga_parser", "-t", "{{.Number}}", url, "1"], check=True, text=True, capture_output=True).stdout.strip()
   lines = result.splitlines()
-  chapters_count = int(lines[0]) if len(lines) > 0 else None
+  chapters_count = float(lines[0]) if len(lines) > 0 else None
   name = lines[1] if len(lines) > 1 else None
   os.remove("1.cbz")
 
