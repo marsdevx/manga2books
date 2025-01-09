@@ -96,7 +96,7 @@ def convert_imgs(path, cover_path):
   chapters_list = []
   for i, chapter_name in enumerate(chapters, start=1):
     chapter_dir = os.path.join(path, chapter_name)
-    image_files = sorted(os.path.join(chapter_dir, fname) for fname in os.listdir(chapter_dir))
+    image_files = natsorted(os.path.join(chapter_dir, fname) for fname in os.listdir(chapter_dir))
     chapter_title = f"Chapter {chapter_name.strip('()')}"
     chapter_filename = f"chapter_{i}.xhtml"
     chapter_obj, image_items = make_ch(chapter_title, image_files, chapter_filename)
