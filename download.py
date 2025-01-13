@@ -49,7 +49,7 @@ def download_extract(name, url, ch_range=None):
 def resize_cut(manga_path):
 
   manga_path = os.path.expanduser(manga_path)
-  max_height = 1500
+  max_height = 1700
 
   for root, _, files in os.walk(manga_path):
     for file in files:
