@@ -55,25 +55,33 @@ def resize_cut(manga_path):
     for file in files:
       file_path = os.path.join(root, file)
       if file.lower().endswith(('.png', '.jpg', '.jpeg', '.img', '.tiff', '.bmp', '.gif')):
-        img = Image.open(file_path)
-        img_width, img_height = img.size
+        try:
+          img = Image.open(file_path)
+          img_width, img_height = img.size
 
-        if img.mode != 'RGB':
-          img = img.convert('RGB')
+          if img.mode == 'P':
+            img = img.convert('RGBA')
 
-        split_count = math.ceil(img_height / max_height)
-        split_height = math.ceil(img_height / split_count)
+          if img.mode != 'RGB':
+            img = img.convert('RGB')
 
-        base_name, ext = os.path.splitext(os.path.basename(file_path))
-        base_dir = os.path.dirname(file_path)
+          split_count = math.ceil(img_height / max_height)
+          split_height = math.ceil(img_height / split_count)
 
-        for i in range(split_count):
-          top = i * split_height
-          bottom = min((i + 1) * split_height, img_height)
-          cropped_img = img.crop((0, top, img_width, bottom))
+          base_name, ext = os.path.splitext(os.path.basename(file_path))
+          base_dir = os.path.dirname(file_path)
 
-          split_name = f"{base_name},{i + 1}{ext}"
-          save_path = os.path.join(base_dir, split_name)
-          cropped_img.save(save_path)
+          for i in range(split_count):
+            top = i * split_height
+            bottom = min((i + 1) * split_height, img_height)
+            cropped_img = img.crop((0, top, img_width, bottom))
 
-        os.remove(file_path)
+            split_name = f"{base_name},{i + 1}{ext}"
+            save_path = os.path.join(base_dir, split_name)
+            cropped_img.save(save_path)
+
+          os.remove(file_path)
+
+        except (IOError, SyntaxError) as e:
+          print(f"Deleting problematic img: {file_path}")
+          os.remove(file_path)
