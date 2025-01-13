@@ -29,7 +29,10 @@ def main():
   url = sys.argv[1]
   ch_range = sys.argv[2] if len(sys.argv) > 2 else None
 
-  result = subprocess.run(["./manga_parser", "-t", "{{.Number}}", url, "1"], check=True, text=True, capture_output=True).stdout.strip()
+  script_dir = os.path.dirname(os.path.abspath(__file__))
+  manga_parser_path = os.path.join(script_dir, "manga_parser")
+
+  result = subprocess.run([manga_parser_path, "-t", "{{.Number}}", url, "1"], check=True, text=True, capture_output=True).stdout.strip()
   lines = result.splitlines()
   chapters_count = float(lines[0]) if len(lines) > 0 else None
   name = lines[1] if len(lines) > 1 else None
@@ -42,7 +45,7 @@ def main():
     sys.exit(1)
 
   print("Downloading imgs")
-  download.download_extract(name, url, ch_range)
+  download.download_extract(manga_parser_path, name, url, ch_range)
 
   print("Downloading cover img for Manga")
   get_cover.get_cover(url)
