@@ -21,10 +21,40 @@ import convert
 import download
 import get_cover
 
+def print_help():
+  print("""
+manga2books - A tool to download manga and convert it to EPUB format for compatibility with Apple's Books app.
+
+Usage:
+  1. Copy the Manga URL:
+    - Visit the Manga Bat website: https://h.mangabat.com/
+    - Find the manga you want to download.
+    - Copy the manga page URL from your browser's address bar.
+
+  2. Download the Manga:
+    Run the following command, replacing <url> with the copied URL:
+      manga2books <url>
+    Example:
+      manga2books https://readmangabat.com/read-iw386363
+
+  3. Download Specific Chapters:
+    To download a specific range of chapters, provide the chapter range after the URL:
+      manga2books <url> <start-end>
+    Example:
+      manga2books https://readmangabat.com/read-iw386363 30-70
+        
+Options:
+  --help, -h            Show this help message and exit.
+  """)
+
 def main():
   if len(sys.argv) != 2 and len(sys.argv) != 3:
-    print("Usage: manga2books <manga_url>")
+    print_help()
     sys.exit(1)
+
+  if sys.argv[1] == "--help" or sys.argv[1] == "-h":
+     print_help()
+     sys.exit(1)
 
   url = sys.argv[1]
   ch_range = sys.argv[2] if len(sys.argv) > 2 else None
