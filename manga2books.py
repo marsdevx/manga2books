@@ -13,6 +13,7 @@
 #                                                                                         ⡝⡵⡈⢟⢕⢕⢕⢕⣵⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣿⣿⣿⣿⣿⠿⠋⣀⣈⠙    #
 #                                                                                         ⡝⡵⡕⡀⠑⠳⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⢉⡠⡲⡫⡪⡪⡣    #
 
+import re
 import os
 import sys
 import validators
@@ -64,6 +65,10 @@ def main():
     sys.exit(1)
       
   ch_range = sys.argv[2] if len(sys.argv) > 2 else None
+  if ch_range is not None:
+      if not re.fullmatch(r"\d+(-\d+)?", ch_range):
+        print("Invalid chapter range format. It must be a number (5) or a range (1-100).")
+        sys.exit(1)
 
   script_dir = os.path.dirname(os.path.abspath(__file__))
   manga_parser_path = os.path.join(script_dir, "manga_parser")
