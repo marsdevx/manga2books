@@ -53,6 +53,7 @@ pip3 install --break-system-packages ebooklib
 pip3 install --break-system-packages natsort
 pip3 install --break-system-packages requests
 pip3 install --break-system-packages beautifulsoup4
+pip3 install --break-system-packages validators
 ```
 
 3. **Set Up an Alias**

@@ -15,6 +15,7 @@
 
 import os
 import sys
+import validators
 import subprocess
 
 import convert
@@ -57,6 +58,11 @@ def main():
      sys.exit(1)
 
   url = sys.argv[1]
+  validators.url(url)
+  if not validators.url(url):
+    print("Invalid URL")
+    sys.exit(1)
+      
   ch_range = sys.argv[2] if len(sys.argv) > 2 else None
 
   script_dir = os.path.dirname(os.path.abspath(__file__))
