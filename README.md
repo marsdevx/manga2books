@@ -1,13 +1,16 @@
 <div align="center">
   <img src="imgs/logo.jpg" width="320px" alt="Manga to Books">
 </div>
+
 <br>
+
 <div align="center">
-  <img src="https://img.shields.io/github/last-commit/marsdevx/manga2books?logo=github&logoColor=f5f5f5&label=Last%20Commit&color=8A2BE2&labelColor=2C2C2C" alt="Last Commit">
-  <img src="https://img.shields.io/badge/Languages-Python%203.13-2181C1?logo=coder&logoColor=f5f5f5&labelColor=2C2C2C" alt="Languages">
-  <img src="https://img.shields.io/badge/Shell-Zsh%20%7C%20Bash-B12B2A?logo=gnu-bash&logoColor=f5f5f5&labelColor=2C2C2C" alt="Shell Support">
-  <img src="https://img.shields.io/badge/Platform-iPhone%20%7C%20iPad%20%7C%20MacBook-748ADB?logo=apple&logoColor=f5f5f5&labelColor=2C2C2C" alt="Supported Platforms">
-  <img src="https://img.shields.io/badge/Output%20Format-EPUB-orange?logo=googleforms&logoColor=f5f5f5&labelColor=2C2C2C" alt="Output Format">
+  <img src="https://custom-icon-badges.demolab.com/github/last-commit/marsdevx/manga2books?logoColor=white&labelColor=2C2C2C&label=Last%20Commit&color=8A2BE2&logo=mark-github" alt="Last Commit">
+  <img src="https://custom-icon-badges.demolab.com/static/v1?logoColor=white&labelColor=2C2C2C&label=Shell&message=Zsh%20%7C%20Bash&color=D32F2F&logo=gnu-bash" alt="Shell Support">
+  <br>
+  <img src="https://custom-icon-badges.demolab.com/static/v1?logoColor=white&labelColor=2C2C2C&label=Languages&message=Python%203.13&color=748ADB&logo=file-code" alt="Languages">
+  <img src="https://custom-icon-badges.demolab.com/static/v1?logoColor=white&labelColor=2C2C2C&label=Platform&message=iPhone%20%7C%20iPad%20%7C%20MacBook&color=F47F42&logo=apple" alt="Supported Platforms">
+  <img src="https://custom-icon-badges.demolab.com/static/v1?logoColor=white&labelColor=2C2C2C&label=Output%20Format&message=EPUB&color=009688&logo=book" alt="Output Format">
 </div>
 
 ---
