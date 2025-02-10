@@ -5,12 +5,15 @@
 <br>
 
 <div align="center">
-  <img src="https://custom-icon-badges.demolab.com/github/last-commit/marsdevx/manga2books?logoColor=white&labelColor=2C2C2C&label=Last%20Commit&color=8A2BE2&logo=mark-github" alt="Last Commit">
-  <img src="https://custom-icon-badges.demolab.com/static/v1?logoColor=white&labelColor=2C2C2C&label=Shell&message=Zsh%20%7C%20Bash&color=D32F2F&logo=gnu-bash" alt="Shell Support">
+
+  [![Last Commit](https://custom-icon-badges.demolab.com/github/last-commit/marsdevx/manga2books?logoColor=white&labelColor=2C2C2C&label=Last%20Commit&color=8A2BE2&logo=mark-github)](https://github.com/marsdevx/manga2books/commits/main "Last Commit")
+  [![Shell Support](https://custom-icon-badges.demolab.com/static/v1?logoColor=white&labelColor=2C2C2C&label=Shell&message=Zsh%20%7C%20Bash&color=D32F2F&logo=gnu-bash)](https://github.com/marsdevx/manga2books "Shell Support")
   <br>
-  <img src="https://custom-icon-badges.demolab.com/static/v1?logoColor=white&labelColor=2C2C2C&label=Languages&message=Python%203.13&color=748ADB&logo=file-code" alt="Languages">
-  <img src="https://custom-icon-badges.demolab.com/static/v1?logoColor=white&labelColor=2C2C2C&label=Platform&message=iPhone%20%7C%20iPad%20%7C%20MacBook&color=F47F42&logo=apple" alt="Supported Platforms">
-  <img src="https://custom-icon-badges.demolab.com/static/v1?logoColor=white&labelColor=2C2C2C&label=Output%20Format&message=EPUB&color=009688&logo=book" alt="Output Format">
+  [![Languages](https://custom-icon-badges.demolab.com/static/v1?logoColor=white&labelColor=2C2C2C&label=Languages&message=Python%203.13&color=748ADB&logo=file-code)](https://github.com/marsdevx/manga2books "Languages")
+  [![Supported Platforms](https://custom-icon-badges.demolab.com/static/v1?logoColor=white&labelColor=2C2C2C&label=Platform&message=iPhone%20%7C%20iPad%20%7C%20MacBook&color=F47F42&logo=apple)](https://github.com/marsdevx/manga2books "Supported Platforms")
+  [![Output Format](https://custom-icon-badges.demolab.com/static/v1?logoColor=white&labelColor=2C2C2C&label=Output%20Format&message=EPUB&color=009688&logo=book)](https://github.com/marsdevx/manga2books "Output Format")
+  [![License](https://custom-icon-badges.demolab.com/static/v1?logoColor=white&labelColor=2C2C2C&label=License&message=MIT&color=00C853&logo=law)](https://github.com/marsdevx/manga2books/blob/main/LICENSE "License")
+
 </div>
 
 ---
