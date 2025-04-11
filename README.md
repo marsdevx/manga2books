@@ -83,7 +83,7 @@ source ~/.bashrc
 
 1. **Copy the Manga URL**
 
-- Go to the [Manga Bat](https://h.mangabat.com/) website.
+- Go to the [Manga Bat](https://www.mangabats.com/) website.
 - Find the manga you want to download.
 - Copy the URL of the manga page from your browser's address bar.
 
