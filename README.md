@@ -20,7 +20,7 @@
 
 # 📚 Manga to Books
 
-**Manga to Books** is an **open-source** tool that **downloads manga** from a [Manga Bat](https://h.mangabat.com/) website and **converts** it into the **EPUB** format, making it compatible with **Apple’s Books app** on **iPhone**, **iPad**, and **MacBook**. Built with **Python**, this program offers **the best way** to enjoy **manga** in a digital format.
+**Manga to Books** is an **open-source** tool that **downloads manga** from a [Manga Bat](https://www.mangabats.com/) website and **converts** it into the **EPUB** format, making it compatible with **Apple’s Books app** on **iPhone**, **iPad**, and **MacBook**. Built with **Python**, this program offers **the best way** to enjoy **manga** in a digital format.
 
 * Specifically designed for **Apple’s** **Books** **app** compatibility.
 * Built with Python for simplicity and **cross-platform** support.
