@@ -81,17 +81,15 @@ def convert_imgs(path, cover_path):
     print(f"Error: {path} is not a valid directory.")
     sys.exit(1)
 
-  if not os.path.isfile(cover_path):
-    print(f"Error: {cover_path} is not a valid file.")
-    sys.exit(1)
-  
   book = epub.EpubBook()
   book.set_identifier(str(random.randint(100000, 999999)))
   book.set_title(manga_name)
   book.set_language("en")
   book.add_author("manga2books")
-  with open(cover_path, "rb") as cover_image_file:
-    book.set_cover(file_name=os.path.basename(cover_path), content=cover_image_file.read())
+
+  if os.path.isfile(cover_path):
+    with open(cover_path, "rb") as cover_image_file:
+      book.set_cover(file_name=os.path.basename(cover_path), content=cover_image_file.read())
 
   chapters_list = []
   for i, chapter_name in enumerate(chapters, start=1):
@@ -112,4 +110,5 @@ def convert_imgs(path, cover_path):
 
   epub.write_epub(output_dir, book, {})
   shutil.rmtree(path)
-  os.remove(cover_path)
+  if os.path.isfile(cover_path):
+    os.remove(cover_path)
