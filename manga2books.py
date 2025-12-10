@@ -29,7 +29,7 @@ manga2books - A tool to download manga and convert it to EPUB format for compati
 
 Usage:
   1. Copy the Manga URL:
-    - Visit the Manga Bat website: https://h.mangabat.com/
+    - Visit the LH Translations website: https://lhtranslation.net/
     - Find the manga you want to download.
     - Copy the manga page URL from your browser's address bar.
 
@@ -37,13 +37,13 @@ Usage:
     Run the following command, replacing <url> with the copied URL:
       manga2books <url>
     Example:
-      manga2books https://readmangabat.com/read-iw386363
+      manga2books https://lhtranslation.net/manga/hazure-skill-kage-ga-usui-o-motsu-guild-shokuin-ga-jitsuha-densetsu-no-ansatsusha/
 
   3. Download Specific Chapters:
     To download a specific range of chapters, provide the chapter range after the URL:
       manga2books <url> <start-end>
     Example:
-      manga2books https://readmangabat.com/read-iw386363 30-70
+      manga2books https://lhtranslation.net/manga/hazure-skill-kage-ga-usui-o-motsu-guild-shokuin-ga-jitsuha-densetsu-no-ansatsusha/ 1-10
         
 Options:
   --help, -h            Show this help message and exit.

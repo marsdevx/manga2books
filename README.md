@@ -20,7 +20,7 @@
 
 # 📚 Manga to Books
 
-**Manga to Books** is an **open-source** tool that **downloads manga** from a [Manga Dex](https://mangadex.org/) and [LH Translation](https://lhtranslation.net/home/) websites and **converts** it into the **EPUB** format, making it compatible with **Apple’s Books app** on **iPhone**, **iPad**, and **MacBook**. Built with **Python**, this program offers **the best way** to enjoy **manga** in a digital format.
+**Manga to Books** is an **open-source** tool that **downloads manga** from a [LH Translations](https://lhtranslation.net/) website and **converts** it into the **EPUB** format, making it compatible with **Apple’s Books app** on **iPhone**, **iPad**, and **MacBook**. Built with **Python**, this program offers **the best way** to enjoy **manga** in a digital format.
 
 * Specifically designed for **Apple’s** **Books** **app** compatibility.
 * Built with Python for simplicity and **cross-platform** support.
@@ -87,7 +87,7 @@ source ~/.bashrc
 - Find the manga you want to download.
 - Copy the URL of the manga page from your browser's address bar.
 
-<img src="imgs/solo-leveling.jpeg" width="500px" alt="Solo Leveling">
+<img src="imgs/preview4.png" width="500px" alt="Solo Leveling">
 
 <br>
 
@@ -95,14 +95,14 @@ source ~/.bashrc
 * Run the following command, replacing the URL with the one you copied:
 
 ```bash
-manga2books https://readmangabat.com/read-iw386363
+manga2books https://lhtranslation.net/manga/hazure-skill-kage-ga-usui-o-motsu-guild-shokuin-ga-jitsuha-densetsu-no-ansatsusha/
 ```
 
 3. **Download Specific Chapters**
 * To download only specific chapters, add the chapter range after the URL:
 
 ```bash
-manga2books https://readmangabat.com/read-iw386363 30-70
+manga2books https://lhtranslation.net/manga/hazure-skill-kage-ga-usui-o-motsu-guild-shokuin-ga-jitsuha-densetsu-no-ansatsusha/ 1-10
 ```
 
 ---
